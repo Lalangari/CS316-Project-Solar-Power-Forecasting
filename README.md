@@ -1,31 +1,37 @@
-# CS316-Project-Solar-Power-Forecasting
-# 
+# CS316 Project: Solar Power Forecasting
 
-Prince Sultan University, College of Computer and Information Systems. Section 1282. Instructor: Dr. Heyfa Ammar.
+Prince Sultan University, College of Computer and Information Systems
+CS316 Introduction to AI and Data Science, Section 1282
 
-## Team
-- Rozana Aljudhy
-- Deema Alqahtani
-- Lama Alangari
-- Layan Alagel
+Team: Rozana Aljudhy, Deema Alqahtani, Lama Alangari, Layan Alagel
 
 ## Project
-Predicts the AC power output of two solar plants from weather data (irradiation, ambient and module temperature) and time of day, using regression models. The project supports SDG 7 (affordable and clean energy) and SDG 13 (climate action).
+We predict the AC power of two solar plants from weather and time-of-day data,
+and compare two tree-based models: XGBoost and Random Forest.
 
 ## Dataset
-[Solar Power Generation Data](https://www.kaggle.com/datasets/anikannal/solar-power-generation-data) on Kaggle: two plants, 15-minute readings from 15 May to 17 June 2020. The notebook downloads it automatically.
+Solar Power Generation Data (Kaggle, anikannal/solar-power-generation-data):
+two plants, 15-minute readings, 15 May to 17 June 2020. The four CSV files
+are in the `data/` folder. The original source is Kaggle.
 
 ## How to run
-1. Open `CS316_project.ipynb` in Google Colab.
-2. Create a Kaggle API token (Kaggle Settings, API section) and save it in Colab Secrets (key icon in the left sidebar) as `KAGGLE_API_TOKEN`.
-3. Choose Runtime, then Restart session and run all.
+1. Open `CS316_project.ipynb` in Google Colab (File > Upload notebook).
+2. Choose Runtime > Run all.
+3. Libraries used: pandas, numpy, matplotlib, seaborn, scikit-learn, xgboost.
 
 ## Notebook contents
-1. Data loading and cleaning
-2. Feature engineering
-3. Exploratory data analysis
-4. Model training and comparison
-5. Evaluation
+1. Loading the data
+2. Cleaning and preprocessing: date parsing, weather gap filling, merging
+3. Feature engineering and memory optimization
+4. Exploratory data analysis
+5. Model training: XGBoost and Random Forest, chronological 80/20 split
+6. Evaluation: MAE, MSE, RMSE, R2, per-plant results, feature importance
 
 ## Results
-(fill in after the final run)
+Overall test R2 is about 0.85 for both models. Plant 1 reaches about 0.98
+and Plant 2 about 0.62.
+
+## Files
+- `data/`: the four dataset files
+- `CS316_project.ipynb`: the full pipeline
+- `report/`: the project report
